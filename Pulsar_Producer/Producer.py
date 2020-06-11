@@ -1,6 +1,8 @@
 import boto3
 import pandas as pd
 import pulsar
+from pulsar.schema import *
+from schemas import Stock
 
 client = pulsar.Client('pulsar://localhost:6650')
 
