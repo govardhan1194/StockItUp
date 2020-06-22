@@ -1,3 +1,4 @@
+# A custom helper module for defining schema for the data set
 from pulsar.schema import *
 
 class Stock(Record):
