@@ -55,4 +55,4 @@ The hero of this infrastructure is Apache Pulsar, however there are multiple nod
 
 Data set: Deutsche Börse Public Dataset - https://registry.opendata.aws/deutsche-boerse-pds/
 
-Presentation Slides: https://docs.google.com/presentation/d/1QgVUkIJdYsrhx1NhLsA0iZPDegfBvzPlB_4o8j6Zxoo/edit?usp=sharing
+Presentation Slides: https://bit.ly/3hR3GBl
