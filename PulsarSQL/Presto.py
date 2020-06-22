@@ -1,8 +1,10 @@
+# A script to show that python can be used for querying the pulsar cluster using pulsarSQL
 import prestodb
 import schedule
 import time
 from datetime import datetime
 
+# A function to query presto every 10 seconds 
 def queryjob():
 
         conn=prestodb.dbapi.connect(
@@ -10,9 +12,9 @@ def queryjob():
                 port=8080,
                 user='Govi')
         cur = conn.cursor()
-        cur.execute('SELECT mnemonic,avg(profitorloss) FROM pulsar."public/default".lasttry group by mnemonic')
+        cur.execute('SELECT mnemonic,avg(profitorloss) FROM pulsar."public/default".ProcessedData group by mnemonic')
         rows = cur.fetchall()
-        print(datetime.now())
+        
 
 schedule.every(10).seconds.do(queryjob)
 
