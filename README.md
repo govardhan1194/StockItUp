@@ -43,3 +43,16 @@ The hero of this infrastructure is Apache Pulsar, however there are multiple nod
 * 3 Pulsar SQL (Presto) nodes
 * 1 Producer node
 * 1 Consumer node
+
+## Key Takeaways:
+
+* Scalability and high throughput can be achieved by utilizing a cluster of Pulsar brokers. More number of nodes can improve the performance.
+* Historical data and real-time data can be made available using Pulsar.
+* Data warehouse-less warehouse can be implemented by utilizing the tiered storage feature provided by Pulsar
+* Apache pulsar is really powerful and has a lot of features!
+
+## Appendix:
+
+Data set: Deutsche Börse Public Dataset - https://registry.opendata.aws/deutsche-boerse-pds/
+
+Presentation Slides: https://docs.google.com/presentation/d/1QgVUkIJdYsrhx1NhLsA0iZPDegfBvzPlB_4o8j6Zxoo/edit?usp=sharing
