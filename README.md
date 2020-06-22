@@ -1,6 +1,6 @@
 # StockItUp
 
-# Introduction: 
+## Introduction: 
 
 Stock data is one of the resources that is widely used and is in demand. It can be utilized in several ways to provide insightful information in various aspects. There are numerous stand-alone approaches by individuals to address each use case. StockItUp aims to bridge this gap by providing an easy to use single infrastructure, where data can be manipulated in any way which would facilitate any use case. 
 
