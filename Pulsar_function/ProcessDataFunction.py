@@ -24,7 +24,7 @@ class ProcessData(Function):
       
       data = input.__dict__
      
-      ProfitorLoss = data['StartProce'] - data['EndPrice']
+      data["ProfitorLoss"] = data['StartProce'] - data['EndPrice']
       
       data["Time"] = convert_dt(data["Time"])
       
