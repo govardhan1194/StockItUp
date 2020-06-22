@@ -13,6 +13,8 @@ StockItUp utilizes a single tool called Apache Pulsar, a pub/sub messaging syste
 
 ### Typical tech stack:
 
+
 ![TypicalTechStack](https://github.com/govardhan1194/StockItUp/blob/master/images/Typical%20tech%20stack.PNG)
+
 
 A typical tech stack for a project like this would look like this where there is a data source and the data is ingested by kafka and processed by spark streaming and so on and so forth. But if you look at this infrastructure , there are a lot of tools interacting with one another and there are a lot of complications
