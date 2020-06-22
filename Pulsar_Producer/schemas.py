@@ -12,3 +12,4 @@ class Stock(Record):
     EndPrice = Float()
     TradedVolume = Integer()
     NumberOfTrades = Integer()
+    ProfitOrLoss = Float()
