@@ -32,3 +32,8 @@ Data is ingested from the data source into the Pulsar cluster. Pulsar functions 
 A retention period of a month is set, afterwhich data from the cluster is offloaded into s3 utilizing the Tiered storage feature of Pulsar. 
 
 Complex queries can be executed on the available data through Pulsar SQL according to the front end queries as the data is being streamed in. Also queries can be executed to retrieve historical data from s3 for data scientists on demand. 
+
+
+## Breaking down the infrastructure:
+
+The hero of the infrastructure is Apache Pulsar, however there are multiple nodes within the pulsar cluster that enables the functioning of the entire pipeline.
