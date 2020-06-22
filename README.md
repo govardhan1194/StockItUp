@@ -11,3 +11,6 @@ StockItUp is a unified streaming pipeline to process historical as well as real-
 
 StockItUp utilizes a single tool called Apache Pulsar, a pub/sub messaging system where data from the data source is ingested and making use of Pulsar functions, the data is processed and stored in another topic. By setting up appropriate retention period threshold either by setting up a time or ledger size, the data is then offloaded to an external object storage service like s3. Towards the end, utilizing pulsar SQL, data can be queried from the cluster as well as from s3, to satisfy front end query demands. This facilitates the data requirements for data scientists and also for a front end which provides an insightful dashboard for rookie investors. 
 
+### Typical tech stack:
+
+A typical tech stack for a project like this would look like this where there is a data source and the data is ingested by kafka and processed by spark streaming and so on and so forth. But if you look at this infrastructure , there are a lot of tools interacting with one another and there are a lot of complications
