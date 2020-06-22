@@ -9,7 +9,7 @@ StockItUp is a unified streaming pipeline to process historical as well as real-
 
 ## The Unified Approach:
 
-StockItUp utilizes a single tool called Apache Pulsar, a pub/sub messaging system where data from the data source is ingested and making use of Pulsar functions, the data is processed and stored in another topic. By setting up appropriate retention period threshold either by setting up a time or ledger size, the data is then offloaded to an external object storage service like s3. Towards the end, utilizing pulsar SQL, data can be queried from the cluster as well as from s3, to satisfy front end query demands. This facilitates the data requirements for data scientists and also for a front end which provides an insightful dashboard for rookie investors. 
+StockItUp utilizes a single tool called Apache Pulsar, a pub/sub messaging system where data from the data source is ingested and making use of Pulsar functions, the data is processed and stored in another topic. By setting up an appropriate retention period threshold either by setting up a time or ledger size, the data is then offloaded to an external object storage service like s3. Towards the end, utilizing pulsar SQL, data can be queried from the cluster as well as from s3, to satisfy front end query demands. This facilitates the data requirements for data scientists and also for a front end which provides an insightful dashboard for rookie investors.
 
 ### Typical tech stack:
 
@@ -17,7 +17,7 @@ StockItUp utilizes a single tool called Apache Pulsar, a pub/sub messaging syste
 ![TypicalTechStack](https://github.com/govardhan1194/StockItUp/blob/master/images/Typical%20tech%20stack.PNG)
 
 
-A typical tech stack for a project like this would look like this where there is a data source and the data is ingested by kafka and processed by spark streaming and so on and so forth. But if you look at this infrastructure , there are a lot of tools interacting with one another and there are a lot of complications. However, Pulsar eliminated all these complications with its inbuilt features.
+A typical tech stack for a project like this would look like this where there is a data source and the data is ingested by Kafka and processed by spark streaming and so forth. But if you look at this infrastructure, there are a lot of tools interacting with one another and there are a lot of complications. However, Pulsar eliminated all these complications with its inbuilt features.
 
 ### Tech stack that was implemented:
 
@@ -27,16 +27,16 @@ A typical tech stack for a project like this would look like this where there is
 
 The data source that I am using here is called XETRA, which is the reference market for exchange trading in German shares and exchange-traded funds. 
 
-Data is ingested from the data source into the Pulsar cluster. Pulsar functions are utilized to process the raw data ingested, for example, create new columns which indicates profit or loss, have data only during the trading hours, etc., and store them in another topic called processedData within the cluster. 
+Data is ingested from the data source into the Pulsar cluster. Pulsar functions are utilized to process the raw data ingested, for example, create new columns which indicate profit or loss, have data only during the trading hours, etc., and store them in another topic called processedData within the cluster. 
 
-A retention period of a month is set, afterwhich data from the cluster is offloaded into s3 utilizing the Tiered storage feature of Pulsar. 
+A retention period of a month is set, after which data from the cluster is offloaded into s3 utilizing the Tiered storage feature of Pulsar. 
 
-Complex queries can be executed on the available data through Pulsar SQL according to the front end queries as the data is being streamed in. Also queries can be executed to retrieve historical data from s3 for data scientists on demand. 
+Complex queries can be executed on the available data through Pulsar SQL according to the front end queries as the data is being streamed in. Also, queries can be executed to retrieve historical data from s3 for data scientists on-demand. 
 
 
 ## Breaking down the infrastructure:
 
-The hero of this infrastructure is Apache Pulsar, however there are multiple nodes within the pulsar cluster that enables the functioning of the entire pipeline. This section shows how many nodes are used for this project.
+The hero of this infrastructure is Apache Pulsar, however, multiple nodes within the pulsar cluster enable the functioning of the entire pipeline. This section shows how many nodes are used for this project.
 
 * 3 pulsar broker nodes/ BookKeeper nodes
 * 3 Zookeeper nodes
