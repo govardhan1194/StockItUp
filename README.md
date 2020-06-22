@@ -36,4 +36,10 @@ Complex queries can be executed on the available data through Pulsar SQL accordi
 
 ## Breaking down the infrastructure:
 
-The hero of the infrastructure is Apache Pulsar, however there are multiple nodes within the pulsar cluster that enables the functioning of the entire pipeline.
+The hero of this infrastructure is Apache Pulsar, however there are multiple nodes within the pulsar cluster that enables the functioning of the entire pipeline. This section shows how many nodes are used for this project.
+
+* 3 pulsar broker nodes/ BookKeeper node
+* 3 Zookeeper nodes
+* 3 Pulsar SQL (Presto) nodes
+* 1 Producer node
+* 1 Consumer node
