@@ -17,7 +17,7 @@ StockItUp utilizes a single tool called Apache Pulsar, a pub/sub messaging syste
 ![TypicalTechStack](https://github.com/govardhan1194/StockItUp/blob/master/images/Typical%20tech%20stack.PNG)
 
 
-A typical tech stack for a project like this would look like this where there is a data source and the data is ingested by kafka and processed by spark streaming and so on and so forth. But if you look at this infrastructure , there are a lot of tools interacting with one another and there are a lot of complications.
+A typical tech stack for a project like this would look like this where there is a data source and the data is ingested by kafka and processed by spark streaming and so on and so forth. But if you look at this infrastructure , there are a lot of tools interacting with one another and there are a lot of complications. However, Pulsar eliminated all these complications with its inbuilt features.
 
 ### Tech stack that was implemented:
 
@@ -25,3 +25,10 @@ A typical tech stack for a project like this would look like this where there is
 ![TechStackImplemented](https://github.com/govardhan1194/StockItUp/blob/master/images/Techstackimplemented.PNG)
 
 
+The data source that I am using here is called XETRA, which is the reference market for exchange trading in German shares and exchange-traded funds. 
+
+Data is ingested from the data source into the Pulsar cluster. Pulsar functions are utilized to process the raw data ingested, for example, create new columns which indicates profit or loss, have data only during the trading hours, etc., and store them in another topic called processedData within the cluster. 
+
+A retention period of a month is set, afterwhich data from the cluster is offloaded into s3 utilizing the Tiered storage feature of Pulsar. 
+
+Complex queries can be executed on the available data through Pulsar SQL according to the front end queries as the data is being streamed in. Also queries can be executed to retrieve historical data from s3 for data scientists on demand. 
